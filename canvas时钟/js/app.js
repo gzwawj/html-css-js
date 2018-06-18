@@ -47,7 +47,8 @@ function Heart(scale) {
     this.centerPoint = {};
     this.init(scale);
 }
-Heart.prototype.init = function(scale) {
+
+Heart.prototype.init = function (scale) {
     var xArr = [],
         yArr = [];
     for (var i = 10; i < 30; i += 0.2) {
@@ -64,7 +65,7 @@ Heart.prototype.init = function(scale) {
     this.getCenter(xArr, yArr);
     this.getSize(xArr, yArr);
 }
-Heart.prototype.draw = function(translateX, translateY, color) {
+Heart.prototype.draw = function (translateX, translateY, color) {
     this.translateX = translateX;
     this.translateY = translateY;
     ctx.save();
@@ -83,13 +84,13 @@ Heart.prototype.draw = function(translateX, translateY, color) {
     ctx.fill();
     ctx.restore();
 }
-Heart.prototype.getCenter = function(xArr, yArr) {
+Heart.prototype.getCenter = function (xArr, yArr) {
     this.centerPoint = {
         x: getMValue(Math.min.apply(null, xArr), Math.max.apply(null, xArr)),
         y: getMValue(Math.min.apply(null, yArr), Math.max.apply(null, yArr))
     };
 }
-Heart.prototype.getSize = function(xArr, yArr) {
+Heart.prototype.getSize = function (xArr, yArr) {
     this.size = {
         width: Math.abs(Math.min.apply(null, xArr) - Math.max.apply(null, xArr)),
         height: Math.abs(Math.min.apply(null, yArr) - Math.max.apply(null, yArr))
