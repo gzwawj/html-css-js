@@ -1,0 +1,32 @@
+.divcss {
+    height: 100px;
+    width: 80%;
+    background: #c8c8c8;
+}
+
+@media (max-width: 600px) {
+    .divcss {
+        background: red;
+    }
+}
+
+@media (max-width: 400px) {
+    .divcss {
+        background: #4cae4c;
+    }
+}
+
+#pos {
+    display: none;
+    position: absolute;
+    width: 80px;
+    background: #8a6d3b;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#pos button {
+    box-sizing: border-box;
+    width: 60px;
+    margin: 4px 0;
+}
