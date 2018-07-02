@@ -1,0 +1,6 @@
+#box {
+    overflow: auto;
+    height: 100px;
+    width: 400px;
+    border: 1px solid #999;
+}

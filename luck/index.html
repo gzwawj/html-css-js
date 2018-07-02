@@ -105,7 +105,7 @@
         position: relative;
         font-family: "微软雅黑";
         margin: auto;
-        background: hsla(0, 0%, 100%, .25) border-box;
+        /*background: hsla(0, 0%, 100%, .25) border-box;*/
         border-radius: 10px;
         text-align: center;
     }
@@ -113,123 +113,126 @@
 <body>
 <div class="bgImg">
     <form name="f1">
-        <!--<div class="left-menu">-->
-        <!--&lt;!&ndash;<div class="left-menu1">&ndash;&gt;-->
-        <!--&lt;!&ndash;<h3>奖项设置</h3>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="list-menu1">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="listmenu1">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>奖项：<span>一等奖</span></p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>人数：<span>1</span></p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="listmenu1">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>奖项：<span>二等奖</span></p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>人数：<span>5</span></p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="listmenu1">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>奖项：<span>三等奖</span></p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>人数：<span>10</span></p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="set-menu1">&ndash;&gt;-->
-        <!--&lt;!&ndash;<input type="text" placeholder="奖项名称">&ndash;&gt;-->
-        <!--&lt;!&ndash;<input type="number" placeholder="奖项数量">&ndash;&gt;-->
-        <!--&lt;!&ndash;<input type="button" value="添加">&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--<div class="left-menu1">-->
-        <!--<h3>奖项设置</h3>-->
-        <!--<div class="set-menu1">-->
-        <!--<table cellspacing="11">-->
-        <!--<tr>-->
-        <!--<td width="40%" align="left">奖项</td>-->
-        <!--<td align="left">人数</td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>一等奖：</td>-->
-        <!--<td><input type="number" name="one"></td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>二等奖：</td>-->
-        <!--<td><input type="number" name="two"></td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>三等奖：</td>-->
-        <!--<td><input type="number" name="three"></td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>四等奖：</td>-->
-        <!--<td><input type="number" name="four"></td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>五等奖：</td>-->
-        <!--<td><input type="number" name="five"></td>-->
-        <!--</tr>-->
-        <!--</table>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="left-menu1">-->
-        <!--<h3>面板设置</h3>-->
-        <!--<div class="set-menu1">-->
-        <!--<table cellspacing="11">-->
-        <!--<tr>-->
-        <!--<td width="40%" align="left">功能</td>-->
-        <!--<td align="left">按键</td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>总面板：</td>-->
-        <!--<td><input type="text" name="total"></td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>参数面板：</td>-->
-        <!--<td><input type="text" name="parameter"></td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>运行面板：</td>-->
-        <!--<td><input type="text" name="run" value=""></td>-->
-        <!--</tr>-->
+        <div class="left-menu">
+            <!--<div class="left-menu1">-->
+            <!--<h3>奖项设置</h3>-->
+            <!--<div class="list-menu1">-->
+            <!--<div class="listmenu1">-->
+            <!--<p>奖项：<span>一等奖</span></p>-->
+            <!--<p>人数：<span>1</span></p>-->
+            <!--</div>-->
+            <!--<div class="listmenu1">-->
+            <!--<p>奖项：<span>二等奖</span></p>-->
+            <!--<p>人数：<span>5</span></p>-->
+            <!--</div>-->
+            <!--<div class="listmenu1">-->
+            <!--<p>奖项：<span>三等奖</span></p>-->
+            <!--<p>人数：<span>10</span></p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="set-menu1">-->
+            <!--<input type="text" placeholder="奖项名称">-->
+            <!--<input type="number" placeholder="奖项数量">-->
+            <!--<input type="button" value="添加">-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="left-menu1">
+                <h3>奖项设置</h3>
+                <div class="set-menu1">
+                    <table cellspacing="11">
+                        <tr>
+                            <td width="40%" align="left">奖项</td>
+                            <td align="left">人数</td>
+                        </tr>
+                        <tr>
+                            <td>一等奖：</td>
+                            <td><input type="number" name="one"></td>
+                        </tr>
+                        <tr>
+                            <td>二等奖：</td>
+                            <td><input type="number" name="two"></td>
+                        </tr>
+                        <tr>
+                            <td>三等奖：</td>
+                            <td><input type="number" name="three"></td>
+                        </tr>
+                        <tr>
+                            <td>四等奖：</td>
+                            <td><input type="number" name="four"></td>
+                        </tr>
+                        <tr>
+                            <td>五等奖：</td>
+                            <td><input type="number" name="five"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="left-menu1">
+                <h3>面板设置</h3>
+                <div class="set-menu1">
+                    <table cellspacing="11">
+                        <tr>
+                            <td width="40%" align="left">功能</td>
+                            <td align="left">按键</td>
+                        </tr>
+                        <tr>
+                            <td>总面板：</td>
+                            <td><input type="text" name="total"></td>
+                        </tr>
+                        <tr>
+                            <td>参数面板：</td>
+                            <td><input type="text" name="parameter"></td>
+                        </tr>
+                        <tr>
+                            <td>运行面板：</td>
+                            <td><input type="text" name="run" value=""></td>
+                        </tr>
 
-        <!--</table>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="left-menu1">-->
-        <!--<h3>数据设置</h3>-->
-        <!--<div class="set-menu1">-->
-        <!--<table cellspacing="11">-->
-        <!--<tr>-->
-        <!--<td width="40%" align="left">功能</td>-->
-        <!--<td align="left">按键</td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-        <!--<td>是否加密：</td>-->
-        <!--<td><input type="checkbox" name="is_encryption"></td>-->
-        <!--</tr>-->
-        <!--</table>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="left-menu1">-->
-        <!--<h3></h3>-->
-        <!--<input class="btn-can" type="button" onclick="getConfig()" value="保存设置"/>-->
-        <!--</div>-->
-        <!--<div class="left-menu2">-->
-        <!--<h3>活动控制面板</h3>-->
-        <!--<div class="set-menu2">-->
-        <!--<select name="" id="sel">-->
-        <!--<option value="0">请选择</option>-->
-        <!--<option value="1">一等奖</option>-->
-        <!--<option value="2">二等奖</option>-->
-        <!--<option value="3">三等奖</option>-->
-        <!--<option value="4">四等奖</option>-->
-        <!--<option value="5">五等奖</option>-->
-        <!--</select>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
+                    </table>
+                </div>
+            </div>
+            <div class="left-menu1">
+                <h3>数据设置</h3>
+                <div class="set-menu1">
+                    <table cellspacing="11">
+                        <tr>
+                            <td width="40%" align="left">功能</td>
+                            <td align="left">按键</td>
+                        </tr>
+                        <tr>
+                            <td>是否加密：</td>
+                            <td><input type="checkbox" name="is_encryption"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="left-menu1">
+                <h3></h3>
+                <input class="btn-can" type="button" onclick="getConfig()" value="保存设置"/>
+            </div>
+            <div class="left-menu2">
+                <h3>活动控制面板</h3>
+                <div class="set-menu2">
+                    <select name="" id="sel">
+                        <option value="all">请选择</option>
+                        <option value="one">一等奖</option>
+                        <option value="two">二等奖</option>
+                        <option value="three">三等奖</option>
+                        <option value="four">四等奖</option>
+                        <option value="five">五等奖</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </form>
 
     <!--中间字幕-->
     <div class="center-font">
         幸运大抽奖
     </div>
+    <audio id="bgMusic">
+        <source src="./audio/bg.mp3" type="audio/mp3">
+    </audio>
 </div>
 
 </body>

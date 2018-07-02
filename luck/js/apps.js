@@ -33,27 +33,55 @@ keyCode = {
  * 获取config参数
  * */
 function getConfig() {
-  // var one, two, three, four, five, total, parameter, run, is_encryption,
+  var one, two, three, four, five, total, parameter, run, is_encryption;
+  one = document.f1['one'].value;
+  two = document.f1['two'].value;
+  three = document.f1['three'].value;
+  four = document.f1['four'].value;
+  five = document.f1['five'].value;
+  total = document.f1['total'].value;
+  parameter = document.f1['parameter'].value;
+  run:document.f1['run'].value;
+  is_encryption = document.f1['is_encryption'].value;
   config = {
-    can: {
-      one: document.f1['one'].value,
-      two: document.f1['two'].value,
-      three: document.f1['three'].value,
-      four: document.f1['four'].value,
-      five: document.f1['five'].value,
+    prize: {
+      one: {
+        num: one,
+        winners: {},
+        error: '一等奖已经抽取完毕，请选择其他奖项！'
+      },
+      two: {
+        num: two,
+        winners: {},
+        error: '二等奖已经抽取完毕，请选择其他奖项！'
+      },
+      three: {
+        num: three,
+        winners: {},
+        error: '三等奖已经抽取完毕，请选择其他奖项！'
+      },
+      four: {
+        num: four,
+        winners: {},
+        error: '四等奖已经抽取完毕，请选择其他奖项！'
+      },
+      five: {
+        num: five,
+        winners: {},
+        error: '五等奖已经抽取完毕，请选择其他奖项！'
+      }
     },
-    total: document.f1['total'].value,
-    parameter: document.f1['parameter'].value,
-    run: document.f1['run'].value,
-    is_encryption: document.f1['is_encryption'].value,
+    total: total,
+    parameter: parameter,
+    run: run,
+    is_encryption: is_encryption,
   };
-
-  var menu1 = document.getElementsByClassName('left-menu1');
-  for (var i = 0; i < menu1.length; i++) {
-    menu1[i].style.display = 'none';
-  }
-  document.getElementsByClassName('left-menu2')[0].style.display = 'none';
-  document.getElementsByClassName('left-menu')[0].style.display = 'none';
+  // var menu1 = document.getElementsByClassName('left-menu1');
+  // for (var i = 0; i < menu1.length; i++) {
+  //   menu1[i].style.display = 'none';
+  // }
+  // document.getElementsByClassName('left-menu2')[0].style.display = 'none';
+  // document.getElementsByClassName('left-menu')[0].style.display = 'none';
   console.log(config)
 }
 
@@ -137,6 +165,77 @@ function centerFont() {
   document.getElementsByClassName('center-font')[0].style.fontSize = s_f + 'px';
 }
 
+var time = 0,
+  key = 0,
+  btn = true;
+var data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
+
+/**
+ * 创建时间函数
+ */
+function runTime() {
+  clearInterval(time);
+  time = setInterval("showName()", 30)
+}
+
+/**
+ * 页面显示名字
+ */
+function showName() {
+  key = Math.floor(Math.random() * (data.length));
+  var name = data[key];
+  document.getElementsByClassName('center-font')[0].innerHTML = name
+}
+
+/**
+ * 活动开始
+ */
+function btnStr() {
+  var sel=document.getElementById('sel').value;
+  if (btn) {
+    if ((sel == config.prize.one) && (config.prize.one.num <= config.prize.one.winners.length)){
+      alert(config.prize.one.error);
+    }else if((sel == config.prize.two) && (config.prize.two.num <= config.prize.two.winners.length)){
+      alert(config.prize.two.error);
+    }else if((sel == config.prize.three) && (config.prize.three.num <= config.prize.three.winners.length)){
+      alert(config.prize.three.error);
+    }else if((sel == config.prize.four) && (config.prize.four.num <= config.prize.four.winners.length)){
+      alert(config.prize.four.error);
+    }else if((sel == config.prize.five) && (config.prize.five.num <= config.prize.five.winners.length)){
+      alert(config.prize.five.error);
+    }else{
+      btn = false;
+      document.getElementsByClassName('center-font')[0].innerHTML = '结束';
+      startRun();
+    }
+  } else {
+    btn = true;
+    document.getElementsByClassName('center-font')[0].innerHTML = '开始';
+    endRun()
+  }
+}
+
+/**
+ * 开始转动
+ */
+function startRun() {
+  runTime();
+}
+
+/**
+ * 停止转动
+ */
+function endRun() {
+  clearInterval(time);
+  var sel1=document.getElementById('sel').value;
+  console.log(sel1)
+  if (sel1 == config.prize.one) {
+    data.splice(key, 1);
+    config.prize.one.winners.push(data[key]);
+    console.log(config.prize.one)
+  }
+}
+
 /**
  * 页面加载完执行
  */
@@ -160,23 +259,36 @@ window.onresize = function () {
 /**
  * 监控键盘
  */
+var audio = document.getElementById("bgMusic");
 window.onkeydown = function () {
   var key = event.keyCode,
     c = document.getElementsByClassName('left-menu1'),
     r = document.getElementsByClassName('left-menu2')[0],
     z = document.getElementsByClassName('left-menu')[0];
 
-  if (keyCode[key] == config.total) {
-    totalFun(z, c, r);
-    console.log('total')
-  } else if (keyCode[key] == config.parameter) {
-    parameterFun(z, c);
-    console.log('parameter')
-  } else if (keyCode[key] == config.run) {
-    runFun(z, r);
-    console.log('run')
-  } else {
-    console.log('error')
+
+  if (event.keyCode == 13 || event.keyCode == 32) {
+    if (audio.paused) {
+      audio.play();
+      btnStr();
+    } else {
+      audio.pause();
+      btnStr();
+    }
+    audio.currentTime = 0;
   }
+
+  // if (keyCode[key] == config.total) {
+  //   totalFun(z, c, r);
+  //   console.log('total')
+  // } else if (keyCode[key] == config.parameter) {
+  //   parameterFun(z, c);
+  //   console.log('parameter')
+  // } else if (keyCode[key] == config.run) {
+  //   runFun(z, r);
+  //   console.log('run')
+  // } else {
+  //   console.log('error')
+  // }
   delete key
 };
