@@ -154,4 +154,4 @@ document.oncontextmenu = function (e) {
     // 禁用默认右键菜单
     e.preventDefault();
 };
-document.body.appendChild(createDOM(5));
+document.body.appendChild(createDOM(6));
