@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+.box h1 {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.box #demo1 {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 40%;
+}
+
+.box #demo2 {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 40%;
+}
+
+.center {
+    width: 10%;
+    padding: 110px 0;
+    margin: auto;
+}
+
+.center button, .center select {
+    margin-top: 10px;
+    width: 100%;
+}
