@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 200px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+p, span, input {
+    display: block;
+    float: left;
+}
+
+p {
+    width: 100%;
+    margin-top: 10px;
+}
+
+select {
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
+span {
+    width: 20px;
+}
