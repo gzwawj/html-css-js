@@ -1,0 +1,54 @@
+body{
+    /*景深*/
+    perspective: 1000px;
+}
+.heart3d{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 250px auto;
+    transform-style: preserve-3d;
+    transition: 10s;
+    transform-origin: 50% 50% -101px;
+}
+.heart3d div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    border: 2px solid red;
+}
+.heart3d div:nth-child(1){
+    top: -302px;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+}
+.heart3d div:nth-child(2){
+    top: 302px;
+    left: 0;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+}
+.heart3d div:nth-child(3){
+    top: 0;
+    left: -302px;
+    transform-origin: right;
+    transform: rotateY(-90deg);
+}
+.heart3d div:nth-child(4){
+    top: 0;
+    left: 302px;
+    transform-origin: left;
+    transform: rotateY(90deg);
+}
+.heart3d div:nth-child(5){
+
+}
+.heart3d div:nth-child(6){
+    transform: translateZ(-302px);
+}
+.heart3d:hover{
+    transform: rotateY(360deg);
+}
