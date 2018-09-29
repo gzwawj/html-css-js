@@ -26,18 +26,42 @@ let $ = function (selector) {
     distance = box.offsetWidth - btn.offsetWidth;
 
 let obj = {w: 40, h: 40}
-let randomObj = () => {
-    obj.x = randomNum(40, 300 - 40);
-    obj.y = randomNum(40, 150 - 40);
-}
-let randomNum = (min, max) => {
-    return parseInt(Math.random() * (max - min + 1) + min, 10);
-}
+// let randomObj = () => {
+//     obj.x = randomNum(40, 300 - 40);
+//     obj.y = randomNum(40, 150 - 40);
+// }
+// let randomNum = (min, max) => {
+//     return parseInt(Math.random() * (max - min + 1) + min, 10);
+// }
 
+const getJSON = (url)=> {
+    const promise = new Promise((resolve, reject)=>{
+        const handler = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                resolve(this.response);
+            }
+        };
+        const client = new XMLHttpRequest();
+        client.open("GET", url,true);
+        client.onreadystatechange = handler;
+        client.responseType = "json";
+        client.setRequestHeader("Accept", "application/json");
+        client.send();
+    });
+    return promise;
+};
+let randomObj=()=>{
+    getJSON("http://localhost:8086/index.php").then(function(json) {
+        obj.x=json.x;
+        obj.y=json.y;
+        canvasfun(0, obj);
+    }, function(error) {
+        console.error('出错了', error);
+    });
+}
 
 //画布初始化
 randomObj();
-canvasfun(0, obj);
 //添加鼠标按下事件
 btn.onmousedown = (e) => {
     btn.style.transition = "";
