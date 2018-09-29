@@ -5,6 +5,8 @@
     background-color: #e8e8e8;
     position: relative;
     margin: 0;
+    display: block;
+    float: left;
 }
 .bg{
     width:40px;
@@ -30,4 +32,13 @@
     background-color: #fff;
     user-select: none;
     color:#666;
+}
+#c{
+    display: block;
+    float: left;
+}
+.box{
+    width: 320px;
+    height: 180px;
+    margin: auto;
 }
